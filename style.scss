@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    @include center();
+    background: rgb(206, 199, 199);
+    width: 100vw;
+    height: 100vh;
+
+}
+//  Bienvenidos , para identificar las proporciones de cada uno , sugiero añardirle un backgroun a elemento imagen , text y buttons
+.card{
+    @include center();
+    flex-flow: column;
+    width: 18em;
+    height: 32em;
+    border-radius: 1em;
+    background: white;
+    padding: 1em;
+    box-shadow: .3em .3em .7em hsla(0, 0%, 0%, 0.5);
+    box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+}
+
+
+// imagen superior de la tarjeta , posee la parte mas grande en proporciones.
+
+.imagen{
+    flex: 7;
+    @include center();
+    border-bottom-left-radius: 30%;
+    border-top-right-radius: 20%;
+    background: rgb(231, 210, 14);
+
+
+    img{
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 1.5em 3px rgba(24, 23, 23, 0.548))
+    }
+}
+
+
+
+// breve descripcion del producto, compuesto por el titulo y parrafo.
+
+.text{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    margin: .5em 0;
+    box-sizing: border-box;
+    flex-flow: column;
+
+    h3{
+        text-align: left;
+    }
+    p{
+        line-height: .9em;
+    }
+}
+
+// esta es la seccion de abajo...contiene los indicadores de cantidad y a la derecha el precio.
+.buttons{
+    flex: 1;
+    @include center();
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+
+    .counters{
+        @include center();
+        flex: 1;
+        flex-flow: row;
+        background: silver;
+        border-radius: .6em;
+        width: 100%;
+        height: 100%;
+
+        p{
+            padding: .3em;
+        }
+
+        button{
+            padding: .3em .6em;
+            border: none;
+            background: transparent;
+        }
+    }
+
+    .precio{
+        @include center();
+        width: 100%;
+        height: 100%;
+        border-radius: .5em;
+        margin-left: .2em;
+        font-size: 1.5em;
+    }
+}
